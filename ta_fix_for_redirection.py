@@ -26,6 +26,7 @@ class FakeLogger(object):
 def parse_args():
     default_source = "/youtube"
     default_use_ytdlp = True
+    default_ytdlp_sleep = 3
     default_perform_changes = True
     default_debug = False
     parser = argparse.ArgumentParser(description="TA Migration Helper Script")
@@ -40,6 +41,12 @@ def parse_args():
         default=default_use_ytdlp,
         action='store_false',
         help="Disable calls to YouTube via yt-dlp. If set, it will only search ElasticSearch."
+    )
+    parser.add_argument(
+        '-s', '--YTDLP_SLEEP',
+        type=int,
+        default=default_ytdlp_sleep,
+        help="Number of seconds to wait between each call to YouTube when using yt-dlp. This value is not used if USE_YTDLP is set to False."
     )
     parser.add_argument(
         '-D', '--DRY_RUN',
