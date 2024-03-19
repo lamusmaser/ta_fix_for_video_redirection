@@ -27,7 +27,7 @@ def parse_args():
     default_source = "/youtube"
     default_use_ytdlp = True
     default_ytdlp_sleep = 3
-    default_perform_changes = True
+    default_dry_run = False
     default_debug = False
     parser = argparse.ArgumentParser(description="TA Migration Helper Script")
     # Optional arguments
@@ -50,7 +50,7 @@ def parse_args():
     )
     parser.add_argument(
         '-D', '--DRY_RUN',
-        default=default_perform_changes,
+        default=default_dry_run,
         action='store_true',
         help="If set to True, this will attempt to change values in Elasticsearch. If False, it will perform a review of what changes need to occur and why."
     )
