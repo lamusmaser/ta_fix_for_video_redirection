@@ -197,11 +197,11 @@ def process_videos(video_files):
                     res = ElasticWrap(f"ta_video/_update/{video}").post(data = source)
                     try:
                         if res[1] == 200 and res[0]['_shards']['total'] == res[0]['_shards']['successful']:
-                            print(f"ElasticSearch was updated successfully.")
+                            print(f"ElasticSearch was updated successfully for ID {video}.")
                         else:
-                            print(f"ElasticSearch was not updated successfully.")
+                            print(f"ElasticSearch was not updated successfully for ID {video}.")
                     except Exception as e:
-                        print(f"Exception occurred during update of ElasticSearch: {e}")
+                        print(f"Exception occurred during update of ElasticSearch for ID {video}: {e}")
 
 
 def main():
