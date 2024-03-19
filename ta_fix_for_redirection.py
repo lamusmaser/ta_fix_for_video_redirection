@@ -180,17 +180,17 @@ def process_videos(video_files):
         videos_es = pull_video_from_es(video)
         for video_es in videos_es:
             expected_changes = {}
-            if video_es['media_url'] not in video_files[video]["expected_location"]:
+            if videos_es[video_es]['media_url'] not in video_files[video]["expected_location"]:
                 expected_changes['media_url'] = video_files[video]["expected_location"].split(f"{args.SOURCE_DIR}/")[1]
-            if video not in video_es['vid_thumb_url']:
-                expected_changes['vid_thumb_url'] = video_es['vid_thumb_url'].replace(video_es['vid_thumb_url'].split("/")[-2],video)
+            if video not in videos_es[video_es]['vid_thumb_url']:
+                expected_changes['vid_thumb_url'] = videos_es[video_es]['vid_thumb_url'].replace(videos_es[video_es]['vid_thumb_url'].split("/")[-2],video)
             if expected_changes:
                 expected_changes['vid_last_refresh'] = 1
                 expected_changes['vid_thumb_base64'] = False
                 expected_changes['tags'] = []
                 if args.DRY_RUN:
                     for key in expected_changes.keys():
-                        print(f"DRY_RUN:\Changing Elasticsearch reference for Video ID {video} - {video_es[key]} -> {expected_changes[key]}.")
+                        print(f"DRY_RUN:\Changing Elasticsearch reference for Video ID {video} - {videos_es[video_es][key]} -> {expected_changes[key]}.")
                 else:
                     source = {}
                     source["doc"] = expected_changes
