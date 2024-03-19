@@ -118,7 +118,7 @@ def review_filesystem(s_dir):
                 else:
                     print(f"Could not extract video ID for `{filename}`.")
     dprint(f"All video files: {video_files}.")
-    dprint(f"All files in filesystem: {all_files}")
+    # dprint(f"All files in filesystem: {all_files}")
     return video_files, all_files
 
 
