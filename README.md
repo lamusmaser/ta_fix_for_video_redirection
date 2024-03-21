@@ -38,9 +38,9 @@ Argument | Flag | Default | Purpose
 ## Running Script
 This is expected to run from within the TubeArchivist container, at the `/app` directory. This allows it to see the TubeArchivist helper functions.
 
-First, login to the TubeArchivist container. Instructions on how to do this are dependent on your platform. To download the script into the container, you can use wget. For example:
+First, login to the TubeArchivist container. Instructions on how to do this are dependent on your platform. To download the script into the container, you can use `curl`. For example:
 ```
-wget https://raw.githubusercontent.com/lamusmaser/ta_fix_for_video_redirection/main/ta_fix_for_redirection.py
+curl https://raw.githubusercontent.com/lamusmaser/ta_fix_for_video_redirection/main/ta_fix_for_redirection.py -o ta_fix_for_redirection.py
 ```
 After the script is downloaded, you can run it with the following command:
 ```
