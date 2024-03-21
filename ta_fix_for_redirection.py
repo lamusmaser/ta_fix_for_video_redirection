@@ -25,7 +25,7 @@ class FakeLogger(object):
 
 def parse_args():
     default_source = "/youtube"
-    default_use_ytdlp = True
+    default_use_ytdlp = False
     default_ytdlp_sleep = 3
     default_dry_run = False
     default_debug = False
@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument(
         '-Y', '--USE_YTDLP',
         default=default_use_ytdlp,
-        action='store_false',
+        action='store_true',
         help="Disable calls to YouTube via yt-dlp. If set, it will only search ElasticSearch."
     )
     parser.add_argument(
