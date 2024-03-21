@@ -44,12 +44,12 @@ curl https://raw.githubusercontent.com/lamusmaser/ta_fix_for_video_redirection/m
 ```
 After the script is downloaded, you can run it with the following command:
 ```
-python ta_fix_for_redirections.py
+python ta_fix_for_redirection.py
 ```
 
 You can run this script with the optional flags. For example:
 ```
-python ta_fix_for_redirections.py -Y -B -r
+python ta_fix_for_redirection.py -Y -B -r
 ```
 
 This would enable YouTube calls via `yt-dlp`, enable debugging outputs, but not perform any changes while outputting details as a dry run attempt.
