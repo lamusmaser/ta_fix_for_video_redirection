@@ -1,6 +1,7 @@
 # TA Fix for Video Redirection
 > [!NOTE]
 > UNOFFICIAL HELPER SCRIPT
+
 Fix videos in TA that are detected as associated to the YouTube Viewers channel, or another channel used when marked as "Video is Unavailable", as part of a video redirection response when pulling metadata.
 
 This is usually indicated by videos having associations with the following channel(s) or video(s):
@@ -21,7 +22,7 @@ This does not start a re-index or thumbnail update on TubeArchivist.
 
 ## Additional Arguments
 > [!WARNING]
-> Using the `PERFORM_MIGRATION` action is a destructive process and could cause issues with files. It is recommended to not use it unless advised or after you have reviewed an initial output of what is expected to happen.
+> Using this script is a destructive process and could cause issues with Elasticsearch. It is recommended to not use it unless advised or after you have reviewed an initial output of what is expected to happen.
 
 Argument | Flag | Default | Purpose
 :--- | :---: | :---: | :---
