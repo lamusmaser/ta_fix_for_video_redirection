@@ -30,7 +30,7 @@ Argument | Flag | Default | Purpose
 `USE_YTDLP` | -Y | `False` | Allows the user to make calls to YouTube via `yt-dlp`. This will replace only making calls to ElasticSearch - this can add significant time to the overall process. 
 `YTDLP_SLEEP` | -s | `3` | Number of seconds to wait between each call to YouTube when using `yt-dlp`. Value will not be used if `USE_YTDLP` is set to `False`.
 `DEBUG` | -B | `False` | If set to `True`, this will show debugging outputs.
-`DRY_RUN` | -r | `False` | If set to `True`, then it will only show what it expects to change. All details are preceeded with a `DRY_RUN` statement.
+`DRY_RUN` | -D | `False` | If set to `True`, then it will only show what it expects to change. All details are preceeded with a `DRY_RUN` statement.
 
 [^1]: This could cause issues with the ES updates portion, as it will be relative to the `SOURCE_DIR`.
 
@@ -49,7 +49,7 @@ python ta_fix_for_redirection.py
 
 You can run this script with the optional flags. For example:
 ```
-python ta_fix_for_redirection.py -Y -B -r
+python ta_fix_for_redirection.py -Y -B -D
 ```
 
 This would enable YouTube calls via `yt-dlp`, enable debugging outputs, but not perform any changes while outputting details as a dry run attempt.
